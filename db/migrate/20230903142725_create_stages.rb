@@ -5,8 +5,11 @@ class CreateStages < ActiveRecord::Migration[6.0]
       t.string :display_prompt
       t.string :image_filename
       t.string :prompt_solution
-
+      t.integer :level_id 
+      t.integer :step
       t.timestamps
     end
+
+    add_foreign_key :stages, :levels
   end
 end

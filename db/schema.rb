@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2023_09_03_142725) do
     t.string "display_prompt"
     t.string "image_filename"
     t.string "prompt_solution"
+    t.integer "level_id"
+    t.integer "step"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -44,4 +46,5 @@ ActiveRecord::Schema.define(version: 2023_09_03_142725) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "stages", "levels"
 end
